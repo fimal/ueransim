@@ -39,15 +39,33 @@ NOTE: Can work at version `5.0.0-23-generic` to run UPF(GTP5G Module.)
 
 ![Image of 5G](https://github.com/fimal/ueransim/blob/main/5G.png)
 
-### Installing
-
+### Requirements
+```
+Ubuntu 16.04 or later
+OpenJDK 11 or later
+g++/gcc version 6.4.0 or later
+```
+### Dependencies
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install make
+sudo apt install g++
+sudo apt install openjdk-11-jdk
+sudo apt install maven
+sudo apt install libsctp-dev lksctp-tools
+```
+### Building
 * Download the related files.
+
 ```
 $ git clone https://github.com/fimal/ueransim.git
 $ cd ueransim
-https://github.com/aligungr/UERANSIM/wiki
-
+Make sure that JAVA_HOME variable is set.
+Run the following command:
+./nr-build
 ```
+
 ### Testing
 
 ```
