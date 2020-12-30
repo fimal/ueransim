@@ -68,25 +68,35 @@ Run the following command:
 
 ### Testing
 
+## KWAF Configuration
+```
+* Configure KWAF WAAS-CONTROLLER to add real ip. kubectl
+    edit -n kwaf deployment waas-controller-deployment
+    under command: "- --user-ip-headers=kwaf-suci"
+* Load 3GPP API schemas for desired NF Security (API Security Properties)
+* Create clasifiers (for example: ausf-auth - Path: /nausf-auth/v1 ; ausf-soR - Path: /nausf-sorprotection/v1 ; ausf-upuprotection - Path:  /nausf-upuprotection/v1)
+* Enable Protections: Signature Engine, Expression Engine Activity Tracking and API Security
+```
+##Attacker
 ```
 $ sudo ./attacker.sh --help
 Usage: ./attacker.sh [ sql | api | imsiCracking | rsExhaustion ]
 ```
-### IMSI Cracking Attack
+## IMSI Cracking Attack
 ```
 $ sudo ./attacker.sh imsiCracking
 ```
-### Resource Exhaustion
+## Resource Exhaustion
 ```
 $ sudo ./attacker.sh rsExhaustion
 ```
 
-### SQL Attack
+## SQL Attack
 ```
 $ sudo ./attacker.sh sql
 ```
 
-### API Attack
+## API Attack
 ```
 $ sudo ./attacker.sh api
 ```
