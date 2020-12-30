@@ -39,13 +39,13 @@ NOTE: Can work at version `5.0.0-23-generic` to run UPF(GTP5G Module.)
 
 ![Image of 5G](https://github.com/fimal/ueransim/blob/main/5G.png)
 
-### Requirements
+## Requirements
 ```
 Ubuntu 16.04 or later
 OpenJDK 11 or later
 g++/gcc version 6.4.0 or later
 ```
-### Dependencies
+## Dependencies
 ```
 sudo apt update
 sudo apt upgrade
@@ -55,7 +55,7 @@ sudo apt install openjdk-11-jdk
 sudo apt install maven
 sudo apt install libsctp-dev lksctp-tools
 ```
-### Building
+## Building
 * Download the related files.
 
 ```
@@ -66,12 +66,12 @@ Run the following command:
 ./nr-build
 ```
 
-### Testing
+## Testing
 
-## KWAF Configuration
+### KWAF Configuration
 ```
-* Configure KWAF WAAS-CONTROLLER to add real ip. kubectl
-    edit -n kwaf deployment waas-controller-deployment
+* Configure KWAF WAAS-CONTROLLER to add real ip.
+    kubectl edit -n kwaf deployment waas-controller-deployment
     under command: "- --user-ip-headers=kwaf-suci"
 * Load 3GPP API schemas for desired NF Security (API Security Properties)
 * Create clasifiers (for example: ausf-auth - Path: /nausf-auth/v1 ; ausf-soR - Path: /nausf-sorprotection/v1 ; ausf-upuprotection - Path:  /nausf-upuprotection/v1)
@@ -82,21 +82,21 @@ Run the following command:
 $ sudo ./attacker.sh --help
 Usage: ./attacker.sh [ sql | api | imsiCracking | rsExhaustion ]
 ```
-## IMSI Cracking Attack
+### IMSI Cracking Attack
 ```
 $ sudo ./attacker.sh imsiCracking
 ```
-## Resource Exhaustion
+### Resource Exhaustion
 ```
 $ sudo ./attacker.sh rsExhaustion
 ```
 
-## SQL Attack
+### SQL Attack
 ```
 $ sudo ./attacker.sh sql
 ```
 
-## API Attack
+### API Attack
 ```
 $ sudo ./attacker.sh api
 ```
