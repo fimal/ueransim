@@ -70,10 +70,10 @@ Run the following command:
 
 ### KWAF Configuration
 ```
-* Configure KWAF WAAS-CONTROLLER to add real ip.
+* Configure KWAF WAAS-CONTROLLER to identify customized header for real ip.
     kubectl edit -n kwaf deployment waas-controller-deployment
     under command: "- --user-ip-headers=kwaf-suci"
-* Load 3GPP API schemas for desired NF Security (API Security Properties)
+* Load 3GPP API schemas (under ueransim/ausfapi ) for desired NF Security (API Security Properties)
 * Create clasifiers (for example: ausf-auth - Path: /nausf-auth/v1 ; ausf-soR - Path: /nausf-sorprotection/v1 ; ausf-upuprotection - Path:  /nausf-upuprotection/v1)
 * Enable Protections: Signature Engine, Expression Engine Activity Tracking and API Security
 ```
